@@ -2,9 +2,9 @@ const express = require('express')
 const mongoose = require('mongoose')
 const graphqlHTTP = require('express-graphql')
 const schema = require('./schema/schema')
-const PORT = 3000
 const app = express()
 
+const PORT = process.env.PORT || 3000
 const dbuser = 'admin'
 const dbpassword = 'admin123456'
 const mlabUrl = `mongodb://${dbuser}:${dbpassword}@ds213665.mlab.com:13665/graphql-books`
@@ -22,6 +22,9 @@ app.use('/graphql', graphqlHTTP({
   graphiql: true,
 }))
 
+app.use('*', (req, res, err) => {
+  !err && res.redirect(`http://localhost:${PORT}/graphql`)
+})
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT} ...`)
