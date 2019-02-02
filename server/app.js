@@ -4,7 +4,7 @@ const graphqlHTTP = require('express-graphql')
 const schema = require('./schema/schema')
 const app = express()
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.port || 3001
 const dbuser = 'admin'
 const dbpassword = 'admin123456'
 const mlabUrl = `mongodb://${dbuser}:${dbpassword}@ds213665.mlab.com:13665/graphql-books`

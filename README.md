@@ -11,7 +11,7 @@
 - Graphiql 
 
 ### How to run:
- - Start server (run on Port 3000)
+ - Start server (run on Port 3001)
 
 ```
 cd server/
@@ -19,7 +19,7 @@ npm start
 ```
 
 GraphiQL playground:
-http://localhost:3000/graphql
+http://localhost:3001/graphql
 
 Sample query:
 
