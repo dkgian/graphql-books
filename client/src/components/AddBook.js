@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { gql } from 'apollo-boost'
 import { graphql } from 'react-apollo'
 
@@ -42,12 +42,22 @@ function AddBookForm({
      <div className="form-group">
        <label>
          Author:
-         <select>
+         <select name="author">
            { loading ? <option>Loading...</option>
             :
-             authors.map(({id, name}) => (
-               <option key={id}>{name}</option>
-             ))
+             <Fragment>
+               <option>Select author...</option>
+               {
+                 authors.map(({id, name}) => (
+                   <option
+                     name={name}
+                     key={id}
+                   >
+                     {name}
+                   </option>
+                 ))
+               }
+             </Fragment>
            }
          </select>
        </label>
