@@ -8,17 +8,18 @@
 - MongoDb
 - [mLab](https://mlab.com/)
 ### Client:
-- Graphiql 
+- React
+- [Apollo client](https://www.apollographql.com/docs/react/) 
 
 ### How to run:
- - Start server (run on Port 3001)
+ - Start server (default on port 3001)
 
 ```
 cd server/
-npm start
+yarn start
 ```
 
-GraphiQL playground:
+GraphiQL server:
 http://localhost:3001/graphql
 
 Sample query:
@@ -57,3 +58,11 @@ mutation{
   }
 }
 ```
+- Start client (default on port 3000)
+
+```
+cd client/
+yarn start
+```
+
+Client page: http://localhost:3000/
