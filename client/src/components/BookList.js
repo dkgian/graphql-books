@@ -1,42 +1,36 @@
-import React from "react"
-import { gql } from 'apollo-boost'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { graphql } from 'react-apollo'
 
-const getBooksQuery = gql`
-  {
-    books{
-      name
-      genre
-      id
-  }
-}
-`
+import { getBooksQuery } from '../queries'
 
 function BookList({
   data: {
     loading,
     books,
-  }
+  },
 }) {
-  console.log(loading)
   return (
     <div>
       <ul id="book-list">
         <li>Book name</li>
-        {loading ?
-          <div>Loading...</div>
-        :
-          books.map(({id, name, genre}) => {
-            return(
-              <li key={id}>
-                {name} - {genre}
-              </li>
-            )
-          })
+        {loading
+          ? <div>Loading...</div>
+          : books.map(({ id, name, genre }) => (
+            <li key={id}>
+              {name}
+              {' '}
+              {genre}
+            </li>
+          ))
         }
       </ul>
     </div>
   )
+}
+
+BookList.propTypes = {
+  data: PropTypes.shape({}).isRequired,
 }
 
 export default graphql(getBooksQuery)(BookList)

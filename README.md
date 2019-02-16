@@ -1,8 +1,8 @@
 ## Project overview
 
 ### Server (NodeJs):
-- Express app
-- GraphQL server
+- Express
+- GraphQL
 
 ### Database:
 - MongoDb
