@@ -23,13 +23,11 @@
         "semi": ["error", "never"],
         "no-trailing-spaces": [2, { "skipBlankLines": false }],
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "rules": {
-            "jsx-a11y/label-has-associated-control": [ 2, {
-                "labelComponents": ["CustomInputLabel"],
-                "labelAttributes": ["label"],
-                "controlComponents": ["CustomInput"],
-                "depth": 3
-            }]
-        }
+        "jsx-a11y/label-has-associated-control": [ 2, {
+            "labelComponents": ["CustomInputLabel"],
+            "labelAttributes": ["label"],
+            "controlComponents": ["CustomInput"],
+            "depth": 3
+        }]
     }
 }
