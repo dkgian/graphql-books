@@ -28,6 +28,7 @@
             "labelAttributes": ["label"],
             "controlComponents": ["CustomInput"],
             "depth": 3
-        }]
+        }],
+        "indent": ["error", 2]
     }
 }
