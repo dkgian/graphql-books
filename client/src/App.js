@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import AppoloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 

@@ -1,19 +1,12 @@
-import React, { Component, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'react-apollo'
 import { getBookQuery } from '../queries'
 
 
-class BookDetail extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-
-    }
-  }
-
-  displayDetail = () => {
-    const { data: { book } } = this.props
+function BookDetail(props) {
+  const displayDetail = () => {
+    const { data: { book } } = props
     if (book) {
       return (
         <Fragment>
@@ -36,18 +29,15 @@ class BookDetail extends Component {
         </Fragment>
       )
     }
-
     return null
   }
 
-  render() {
-    return (
-      <div>
-        <h5>Book detail:</h5>
-        {this.displayDetail()}
-      </div>
-    )
-  }
+  return (
+    <div>
+      <h5>Book detail:</h5>
+      {displayDetail()}
+    </div>
+  )
 }
 
 BookDetail.propTypes = {

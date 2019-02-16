@@ -35,6 +35,8 @@ class AddBookForm extends Component {
       },
       refetchQueries: [{ query: getBooksQuery }],
     })
+
+    this.clearState()
   }
 
   render() {
