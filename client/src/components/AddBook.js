@@ -2,7 +2,7 @@ import React, { Fragment, Component } from 'react'
 import PropTypes from 'prop-types'
 import { graphql, compose } from 'react-apollo'
 
-import { getAuthorsQuery, addBookMutation } from '../queries'
+import { getAuthorsQuery, addBookMutation, getBooksQuery } from '../queries'
 
 class AddBookForm extends Component {
   constructor(props) {
@@ -12,6 +12,14 @@ class AddBookForm extends Component {
       genre: '',
       authorId: '',
     }
+  }
+
+  clearState = () => {
+    this.setState({
+      name: '',
+      genre: '',
+      authorId: '',
+    })
   }
 
   onSubmit = (e) => {
@@ -25,6 +33,7 @@ class AddBookForm extends Component {
         genre,
         authorId,
       },
+      refetchQueries: [{ query: getBooksQuery }],
     })
   }
 
